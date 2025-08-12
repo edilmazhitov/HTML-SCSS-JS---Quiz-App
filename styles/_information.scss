@@ -1,0 +1,72 @@
+@use "./abstracts" as *;
+
+.information {
+  text-align: center;
+  background-color: green;
+
+
+  &__title {
+    padding: 40px 0 20px;
+    color: yellow;
+
+    @include media("tablet-x") {
+      padding: 25px 0;
+      font-size: 22px;
+    }
+
+    @include media("tablet") {
+      padding: 20px 0;
+      font-size: 18px;
+    }
+
+    @include media("phablet") {
+      padding: 15px 0;
+      font-size: 16px;
+    }
+
+    @include media("mobile-x") {
+      padding: 10px 0;
+      font-size: 14px;
+    }
+
+    @include media("mobile-m") {
+      padding: 6px 0;
+      font-size: 12px;
+    }
+
+    @include media("mobile-s") {
+      font-size: 10px;
+    }
+  }
+
+  &__subtitle {
+    padding-bottom: 20px;
+    color: white;
+
+    @include media("tablet-x") {
+      font-size: 16px;
+    }
+
+    @include media("tablet") {
+      font-size: 14px;
+    }
+
+
+    @include media("phablet") {
+      font-size: 12px;
+    }
+
+    @include media("mobile-l") {
+      font-size: 10px;
+      padding-bottom: 10px;
+    }
+
+    @include media("mobile-m") {
+      font-size: 8px;
+      font-weight: 400;
+    }
+    span {
+      color: orangered;
+    }
+  }
+}

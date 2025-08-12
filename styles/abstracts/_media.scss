@@ -1,0 +1,34 @@
+@use 'sass:map';
+
+$breakpoints: (
+  'mobile-s': 320px,
+  'mobile-m': 375px,
+  'mobile-l': 425px,
+  'mobile-x': 475px,
+  'phablet': 600px,
+  'tablet': 768px,
+  'tablet-x': 850px,
+  'laptop': 1024px,
+  'desktop': 1200px,
+);
+
+@mixin media($breakpoint) {
+  $size: map.get($breakpoints, $breakpoint);
+  @if $size {
+    @media (max-width: $size) {
+      @content;
+    }
+  } @else {
+    @warn "Нет такого брейкпоинта: `#{$breakpoint}`.";
+  }
+}
+
+@mixin hover-supported {
+  @media (hover: hover) and (pointer: fine) {
+    transition: 0.3s ease;
+    &:hover {
+      transition: 0.3s ease;
+      @content;
+    }
+  }
+}
