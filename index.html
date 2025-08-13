@@ -1,50 +1,48 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-  >
-  <meta
-    http-equiv="X-UA-Compatible"
-    content="ie=edge"
-  >
-  <title>Quiz-App</title>
-  <link
-    rel="stylesheet"
-    href="./styles/styles.css"
-  >
-</head>
-<body>
-<header class="header">
-  <div class="container">
-    <h1 class="header__title">
-      QuizApp - <span>тест по FRONT-END</span>
-    </h1>
-  </div>
-</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Quiz-App</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="header__title">QuizApp - <span>тест по FRONT-END</span></h1>
+      </div>
+    </header>
 
-<main class="main">
-  <section class="information">
-    <div class="container">
-      <h2 class="information__title">
-        Тест для Junior Front-End Разработчикам.
-      </h2>
-      <h3 class="information__subtitle">
-        Тест создано для закрепление и повторение знания по <br>
-        Front-End разработки. В этом тесте имеется вопросы по <span>
-        HTML5,CSS3, JavaScript <br>
-        + SCSS и библиотека ReactJS.
-      </span>
-      </h3>
-    </div>
-  </section>
-  <section class="test">
-    <div class="container">
-      <button class="test__start-btn">Начать тест.</button>
-    </div>
-  </section>
-</main>
-</body>
+    <main class="main">
+      <section class="information">
+        <div class="container">
+          <h2 class="information__title">
+            Тест для Junior Front-End Разработчикам.
+          </h2>
+          <h3 class="information__subtitle">
+            Тест создано для закрепление и повторение знания по <br />
+            Front-End разработки. В этом тесте имеется вопросы по
+            <span>
+              HTML5,CSS3, JavaScript <br />
+              + SCSS и библиотека ReactJS.
+            </span>
+          </h3>
+        </div>
+      </section>
+
+      <section class="test">
+        <div class="container">
+          <button class="test__start-btn" id="start-test">Начать тест.</button>
+
+          <div class="test__block" id="test-block"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./scripts/main.js" type="module" defer></script>
+  </body>
 </html>
