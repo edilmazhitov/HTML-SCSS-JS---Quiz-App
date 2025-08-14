@@ -5,10 +5,10 @@ const testBlock = document.getElementById('test-block')
 
 let count = 0
 let newQuest = []
-let result;
-let grade;
-let allAnswers = [];
-let finishTest = false;
+let result = 0
+let grade
+let allAnswers = []
+let finishTest = false
 
 const showQuest = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -20,11 +20,6 @@ const showQuest = (array) => {
 
 const renderQuestion = () => {
   const question = newQuest[count]
-
-
-
-
-
 
   testBlock.innerHTML = `
     <h2 class="test__title">${question.questions}</h2>
@@ -64,25 +59,22 @@ const renderQuestion = () => {
 
       result = allAnswers.filter((item) => item === true).length
 
-
-
       switch (true) {
         case result <= 5:
-          grade = 2;
-          break;
+          grade = 2
+          break
         case result <= 10:
-          grade = 3;
-          break;
+          grade = 3
+          break
         case result <= 17:
-          grade = 4;
-          break;
-        case result <=20:
-          grade = 5;
-          break;
+          grade = 4
+          break
+        case result <= 20:
+          grade = 5
+          break
         default:
-          grade = "Возникла не привидинное ошибка системы"
+          grade = 'Возникла не привидинное ошибка системы'
       }
-
 
       if (count === newQuest.length - 1) {
         testBlock.innerHTML = `
@@ -94,13 +86,13 @@ const renderQuestion = () => {
             <button class="test__result-close">Закрыть</button>
         </div>
        `
-        finishTest = true;
+        finishTest = true
 
         setInterval(() => {
           if (finishTest) {
             testStartButtons.style.display = 'block'
-            testBlock.style.display = 'none';
-            finishTest = false;
+            testBlock.style.display = 'none'
+            finishTest = false
           }
         }, 30000)
       } else {
@@ -111,21 +103,25 @@ const renderQuestion = () => {
       alert('Выберите сначала ответ!')
     }
 
-    const closeResult = document.querySelector(".test__result-close");
+    const closeResult = document.querySelector('.test__result-close')
 
-    closeResult.addEventListener("click", (e) => {
-      e.preventDefault();
+    closeResult.addEventListener('click', (e) => {
+      e.preventDefault()
       testStartButtons.style.display = 'block'
-      testBlock.style.display = 'none';
-      finishTest = false;
+      testBlock.style.display = 'none'
     })
   })
 }
 
-
 testStartButtons.addEventListener('click', () => {
   testStartButtons.style.display = 'none'
   testBlock.style.display = 'block'
+
+  count = 0
+  result = 0
+  grade = undefined
+  allAnswers = []
+  finishTest = false
 
   newQuest = showQuest([...questions])
   renderQuestion()
